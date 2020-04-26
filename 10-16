@@ -10,10 +10,10 @@ def keyEvent(event):
 ## 메인 코드 부분 ##
 window = Tk()
 
-window.bind("<Up>", keyEvent)
-window.bind("<Down>", keyEvent)
-window.bind("<Left>", keyEvent)
-window.bind("<Right>", keyEvent)
+window.bind("<Up>", keyEvent)             ## 위쪽 화살표 누를시 Up 표시 ##
+window.bind("<Down>", keyEvent)           ## 아래쪽 화살표 누를시 Down 표시 ##
+window.bind("<Left>", keyEvent)           ## 왼쪽 화살표 누를시 Left 표시 ##
+window.bind("<Right>", keyEvent)          ## 오른쪽 화살표 누를시 Right 표시 ##
 
 
 
