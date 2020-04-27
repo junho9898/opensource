@@ -1,13 +1,11 @@
 from tkinter import *
 from time import *
 
-## 전역  변수 선언 부분 ##
 fnameList = ["Dog1.gif", "Dog2.gif", "Dog3.gif"]
 photoList = [None] * 3
 num = 0
 
 
-## 함수 선언 부분 ##
 def clickNext():
     global num
     num += 1
