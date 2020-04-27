@@ -25,8 +25,6 @@ def clickPrev():
     pLabel.configure(image=photo)
     pLabel.image = photo
 
-
-## 메인 코드 부분
 window = Tk()
 window.geometry("700x500")
 window.title("사진 앨범 보기")
