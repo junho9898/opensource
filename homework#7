@@ -124,11 +124,11 @@ fileMenu.add_command(label="프로그램 종료", command=func_exit)
 
 imageEffectMenu = Menu(window)
 mainMenu.add_cascade(label = "사진효과", menu = imageEffectMenu)
-imageEffectMenu.add_command(label = "밝게하기", command = toBright)
+imageEffectMenu.add_command(label = "밝게하기", command = Bright)
 imageEffectMenu.add_separator()
-imageEffectMenu.add_command(label = "어둡게하기", command = toDark)
+imageEffectMenu.add_command(label = "어둡게하기", command = Dark)
 imageEffectMenu.add_separator()
-imageEffectMenu.add_command(label = "반전 이미지", command = toReverse)
+imageEffectMenu.add_command(label = "반전 이미지", command = Reverse)
 
 # 파일 --> 메모리
 filename = 'c:/opensoruce//tree.raw'  # C:/CookPython/RAW/tree.raw
