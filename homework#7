@@ -49,7 +49,7 @@ def Bright() :
         
     paper.put(rgbString)
     
-def toDark():
+def Dark():
 
     global inImage
     global XSIZE, YSIZE
@@ -67,7 +67,7 @@ def toDark():
         rgbString += "{" + tmpString + "} "  # }
     paper.put(rgbString)
     
-def toReverse() :
+def Reverse() :
 
     global inImage
     global XSIZE, YSIZE
