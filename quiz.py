@@ -67,38 +67,38 @@ def selectData():
 
     con.close()
 
-def reverseTurtle():
+# def reverseTurtle():
 
-    d1, d2, d3, d4, d5, d6, d7 = "", "", "", "", "", "", ""
-    row = None
+#     d1, d2, d3, d4, d5, d6, d7 = "", "", "", "", "", "", ""
+#     row = None
 
-    con = sqlite3.connect("C:/Dev/sqlite/turtleDB")
-    cur = con.cursor()
-    cur.execute("SELECT * FROM turtleTable")
+#     con = sqlite3.connect("C:/Dev/sqlite/turtleDB")
+#     cur = con.cursor()
+#     cur.execute("SELECT * FROM turtleTable")
 
-    while True:
-        row = cur.fetchone()
-        if row == None:
-            break;
+#     while True:
+#         row = cur.fetchone()
+#         if row == None:
+#             break;
 
-        d1 = row[0]
-        d2 = row[1]
-        d3 = row[2]
-        d4 = row[3]
-        d5 = row[4]
-        d6 = row[5]
-        d7 = row[6]
+#         d1 = row[0]
+#         d2 = row[1]
+#         d3 = row[2]
+#         d4 = row[3]
+#         d5 = row[4]
+#         d6 = row[5]
+#         d7 = row[6]
 
-        for d1 in range(3, -1, 1):
-            r = d2
-            g = d3
-            b = d4
-            turtle.pencolor((r, g, b))
-            turtle.pendown()
-            turtle.goto(d6, d7)
+#         for d1 in range(3, -1, 1):
+#             r = d2
+#             g = d3
+#             b = d4
+#             turtle.pencolor((r, g, b))
+#             turtle.pendown()
+#             turtle.goto(d6, d7)
 
 
-con.close()
+# con.close()
 
 # main
 
@@ -146,7 +146,7 @@ while True:
 
 selectData()
 turtle.clear()
-reverseTurtle()
+# reverseTurtle()
 
 
 
