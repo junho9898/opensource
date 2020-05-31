@@ -1,3 +1,9 @@
+import sys
+sys.path.insert(0,"/usr/lib/python3.6/site-packages")
+
+import pymysql
+
+pymysql.install_as_MySQLdb()
 """
 Django settings for django_demo project.
 
@@ -78,6 +84,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#	'USER': 'root',
+#	'PASSWORD': 'root',
+#    'HOST':'localhost',
+#    'PORT':'3306'
     }
 }
 

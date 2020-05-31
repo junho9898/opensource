@@ -26,7 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('mapPage/', main.views.mapPage, name='mapPage'),
-    path('mapPage/bokdae_info', main.views.bokdae_info, name='bokdae_info'),
+    path('mapPage/bds', main.views.bokdae_info, name='bokdae_info'),
+    path('mapPage/bda', main.views.bokdae_apt_list, name='bokdae_apt_list'),
+    path('mapPage/bdo', main.views.bokdae_office_list, name='bokdae_office_list'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
