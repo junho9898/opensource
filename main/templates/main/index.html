@@ -1,38 +1,250 @@
 {% load static %}
+<!DOCTYPE html>
 
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href='{% static "css/cover.css" %}'>
-</head>
+<style>
 
-<body>
-<body class="text-center">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">Cover</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
-	<a class="nav-link" href="/mapPage">MapPage</a>
-        <a class="nav-link" href="#">Features</a>
-	<a class="nav-link" href="/signin">Sign in</a>
-        <a class="nav-link" href="#">Sign Up</a>
-      </nav>
-    </div>
-  </header>
+ul,ol {list-style:none;}
 
-  <main role="main" class="inner cover">
-    <h1 class="cover-heading">Cover your page.</h1>
-    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-    <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-    </p>
-  </main>
+.header_top .inner {margin:0 auto;width:1150px;}
+.header_top .inner:after {content:'';display:block;clear:both;}
+.header_top .inner>a {float:left;margin-top:10px;}
+.header_top .header_util {float:right;margin-top:7px;}
+.header_top .header_util .set_login {display:inline-block;padding:0;font-size:12px;color:#000;line-height:0px;border:1px solid #e1e1e1;background:transparent;vertical-align:top;}
+.header_top .header_util .set_login {margin-top:3px;border:0;background:#fff;}
 
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    </div>
-  </footer>
+
+.header_body {position:relative;}
+.header_body .inner {height:50px;margin:0 auto;padding-top:23px;width:1200px;}
+
+.header_body .header_logo{position:relative;display:inline-block;top:-15px;left:0;z-index:30;}
+.header_body .header_logo a{display:inline-block;}
+
+
+.header_body .gnb {position:absolute;top:0;left:10;right:0;padding-top:6px;background:#fff;z-index:20;}
+.header_body .gnb:before {content:'';position:absolute;left:0;right:0;top:73px;height:1px;background:#d2d3d5;}
+.header_body .gnb:after {display:none;content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:#d2d3d5;}
+.header_body .gnb .depth1 {width:1000px;margin:0 auto;}
+.header_body .gnb.reagent .reagent_muarea{width:1100px;margin:0 auto;text-align:right;}
+.header_body .gnb.reagent .depth1 {position:relative;display:inline-block;width:705px;margin:0;}
+.header_body .gnb .depth1>li {float:left;padding-left:75px;}
+.header_body .gnb .depth1>li:first-child {margin-left:0;}
+
+
+.header_body .gnb .depth1>li>a {display:block;padding:15px 10px 28px 10px;color:#333;text-align:center;border-bottom:4px solid transparent;}
+.header_body .gnb .depth1>li>a:hover, .header_body .gnb .depth1>li>a:focus, .header_body .gnb .depth1>li.active>a {border-color:#3e63be;}
+.header_body .gnb .depth1>li>a .depth1_menu{display:inline-block;padding:20px;height:22px;font-size:0;color:transparent;background-position:50% 0;background-repeat:no-repeat;}
+.header_body .gnb .depth1>li>a .depth1_menu.mu01{width:45px;background-image:url({% static "img/title/apt.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu02{width:45px;background-image:url({% static "img/title/off.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu03{width:45px;background-image:url({% static "img/title/one.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu06{width:45px;background-image:url({% static "img/title/ju.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu07{width:50px;background-image:url({% static "img/title/mypage.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu01, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu01, .header_body .gnb .depth1>li.active>a .depth1_menu.mu01{background-image:url({% static "img/title/apt1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu02, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu02, .header_body .gnb .depth1>li.active>a .depth1_menu.mu02{background-image:url({% static "img/title/off1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu03, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu03, .header_body .gnb .depth1>li.active>a .depth1_menu.mu03{background-image:url({% static "img/title/one1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu06, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu06, .header_body .gnb .depth1>li.active>a .depth1_menu.mu06{background-image:url({% static "img/title/ju1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu07, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu07, .header_body .gnb .depth1>li.active>a .depth1_menu.mu07{background-image:url({% static "img/title/mypage1.png" %});}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu01{width:20px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu01_off.png);}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu02{width:64px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu02_off.png);}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu03{width:63px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu03_off.png);}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu06{width:90px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu06_off.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu01{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu01_on.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu02{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu02_on.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu03{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu03_on.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu06{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu06_on.png);}
+
+.header_body .gnb.on:after {display:block;}
+
+
+.fix_2depth_area {display:block;background:#eff0f4;}
+.fix_2depth_area ul {margin:0 auto;width:1180px;text-align:center;}
+.fix_2depth_area li {display:inline-block;}
+.fix_2depth_area li>a {display:block;padding:17px 18px 19px;font-size:15px;color:#666;}
+.fix_2depth_area li.on>a{color:#3f63bf;}
+.fix_2depth_area li:first-child>a {padding-left:0;}
+
+.fix_2depth_area .reagent_fix_2depth{margin:0 auto;width:1180px;text-align:right;}
+.fix_2depth_area .reagent_fix_2depth ul{display:inline-block;margin:0;width:705px;text-align:center;}
+
+.header_inner {margin:0 auto;width:1180px;height:120px;background:#333;}
+
+
+
+
+
+
+.main_visual{margin:55px 0 40px;font-size:0;height:237px;position:relative;}
+.main_visual .box{display:inline-block;border-radius:10px;height:237px;width:257px;vertical-align:top;position:relative;}
+.main_visual .box .title{height:100%;width:100%;cursor:pointer;padding:30px;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.main_visual .box.off .title{padding:27px 27px 27px 25px;}
+.main_visual .box .title>a {display:block;height:100%;width:100%;}
+.main_visual .box .title>a>strong{display:block;font-size:0;height:29px;width:150px;margin-bottom:17px;}
+.main_visual .box .title>a>p{display:block;font-size:0;height:70px;width:165px;}
+.main_visual .box.off {background-size:auto 70px}
+.main_visual .box.off .title>a>strong{height:30px;width:108px;}
+.main_visual .box.off .title>a>p{height:82px;width:auto;}
+
+.main_visual .box01 {background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_ico01.png) 100% 100% no-repeat #223f84;}
+.main_visual .box01 .title>a>strong{background:url({% static "img/title/ja.png" %}) no-repeat #223f84;}
+.main_visual .box01 .title>a>p{background:url({% static "img/title/ja1.png" %}) no-repeat;}
+.main_visual .box01.off {background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_ico01_off.png) 100% 100% no-repeat #223f84;}
+.main_visual .box01.off .title>a>strong{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_title01_off.png) no-repeat;}
+.main_visual .box01.off .title>a>p{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_text01_off.png) no-repeat;}
+
+.main_visual .box02 {background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_ico02.png) 100% 100% no-repeat #f6d627;left:50px;}
+.main_visual .box02 .title>a>strong{background:url({% static "img/title/toron.png" %}) no-repeat;}
+.main_visual .box02 .title>a>p{background:url({% static "img/title/toron1.png" %}) no-repeat;}
+.main_visual .box02.off .title>a>strong{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_title02_off.png) no-repeat;}
+.main_visual .box02.off .title>a>p{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_text02_off.png) no-repeat;}
+
+.main_visual .box03 {background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_ico03.png) 100% 100% no-repeat #ffae11;left:100px;}
+.main_visual .box03 .title>a>strong{background:url({% static "img/title/je.png" %}) no-repeat;}
+.main_visual .box03 .title>a>p{background:url({% static "img/title/je1.png" %}) no-repeat;}
+.main_visual .box03.off .title>a>strong{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_title03_off.png) no-repeat;}
+.main_visual .box03.off .title>a>p{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_text03_off.png) no-repeat;}
+
+.main_visual .box04 {background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_ico04.png) 100% 100% no-repeat #d1cfcf;left:150px;}
+.main_visual .box04 .title>a>strong{background:url({% static "img/title/search.png" %}) no-repeat;}
+.main_visual .box04 .title>a>p{background:url({% static "img/title/search1.png" %}) no-repeat;}
+.main_visual .box04.off .title>a>strong{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_title04_off.png) no-repeat;}
+.main_visual .box04.off .title>a>p{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_text04_off.png) no-repeat;}
+
+.main_visual .box.box01.on,
+.main_visual .box.box03.on{background-image:none;}
+
+.main_visual .box.on .active>strong{display:block;height:24px;width:134px;font-size:0;}
+.main_visual .box01.on .active>strong{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_title01_on.png) no-repeat;}
+.main_visual .box02.on .active>strong{background-image:none;}
+.main_visual .box03.on .active>strong{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_main_box_ttl03_on.png) no-repeat;}
+
+.main_visual .active{display:none;position:relative;padding:30px 45px;width:615px;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.main_visual .box.on .title{display:none;}
+.main_visual .box.on .active{display:block;}
+.main_visual .box.on .active .btn_box_close {height:17px;width:17px;border:none;font-size:0;position:absolute;right:20px;top:20px;}
+.main_visual .box.on .active .btn_box_close.white{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_btn_mainBox_close_w.png) no-repeat;}
+.main_visual .box.on .active .btn_box_close.black{background:url(https://nimg1.kbstar.com/img/okbland/web/main/w_btn_mainBox_close_b.png) no-repeat;}
+
+
+
+.footer_inner {position:relative;padding:20px 0;}
+.footer_inner:after {content:'';display:block;clear:both;}
+.footer_inner {margin:0 auto;width:1180px;}
+.footer_logo {float:left;margin:5px 28px 0 0;width:150px;height:60px;font-size:0;background:url({% static "img/title/logob.png" %}) no-repeat;}
+.footer_cont {float:left;}
+.footer_menu:after {content:'';display:block;clear:both;}
+.footer_menu li {float:left;}
+.footer_menu li>a {position:relative;padding:0 6px;font-size:12px;color:#333;line-height:22px;}
+.footer_menu li>a:before {content:'';position:absolute;left:0;top:5px;width:1px;height:7px;background:#dddedd;}
+.footer_menu li:first-child>a {padding-left:0;}
+.footer_menu li:first-child>a:before {display:none;}
+.footer_info {margin-top:4px;font-size:12px;line-height:25px;}
+.footer_info .info_tel {position:relative;margin-left:10px;padding-left:18px;}
+.footer_info .info_tel:before {content:'';position:absolute;left:0;top:1px;width:18px;height:17px;background:url(https://nimg1.kbstar.com/img/okbland/web/ico/w_ico_footer.png) no-repeat 0 -34px;}
+
+</style>
+
+
+<body style="padding:5px 300px 5px 300px;">
+	<div class="header_top">
+		<div class="inner">
+			<a href="https://www.kbstar.com"><img src='{% static "img/title/02로고타입_Big.jpg" %}' alt="충북대학교" style="width:100px; height:20px"></a>
+			<div class="header_util">
+				<ul style="float:right">
+					{% if user.is_authenticated %}
+					<span class="set_login"><a href="{% url 'logout' %}">로그아웃</a></span>
+					{% else %}
+					<span class="set_login"><a href="{% url 'login' %}">로그인</a></span>
+					<span class="set_login"><a href="{% url 'signup' %}">회원가입</a></span>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+<div class="header_body">
+	<div class="inner">
+		<div class="header_logo"><a href="/" class="logo_kbl"><img src='{% static "img/title/임시로고.png" %}' alt="KB부동산 liiv on" style="width:150px; height:65px"></a>
+		</div>
+		<!-- Start: gnb -->
+		<div class="gnb">
+			<ul class="depth1 clfix">
+				<li><a href='/mapPage/apt'><span class="depth1_menu mu01">매물/시세</span></a></li>
+				<li><a href='/quics?page=C059692'><span class="depth1_menu mu02">분양</span></a></li>
+				<li><a href='/quics?page=C059702'><span class="depth1_menu mu03">경매</span></a></li>
+				<li><a href='/quics?page=C059653'><span class="depth1_menu mu06">상권분석</span></a> </li>
+				<li><a href='/quics?page=C059753'><span class="depth1_menu mu07">MY부동산</span></a></li>
+			</ul>
+		</div>
+	</div>
 </div>
+
+<div text-align:center;><img src='{% static "img/title/임시.png" %}' width="1100" height="500" style="padding:15px"></img></div>
+
+
+<div class="main_visual">
+		<div class="box box01">
+			<div class="title move">
+				<a href="post/a" class="list-group-item">
+					<strong>지역</strong>
+					<p>평소 관심 지역으로 매물/시세를 찾아보세요</p>
+				</a>
+			</div>
+		</div>
+		<div class="box box02">
+			<div class="title">
+				<a href="post/a" class="list-group-item">
+					<strong>지도</strong>
+					<p>지도에서 직접 매물/시세를 찾아보세요</p>
+				</a>
+			</div>
+		</div>
+		<div class="box box03">
+			<div class="title">
+				<a href="#" onclick="fn_ScripAdscPop('ScripAdscLayerPop','.returnBtn'); return false;">
+					<strong>청약가점</strong>
+					<p>당첨될 수 있을까? 일단 가점부터 계산!</p>
+				</a>
+			</div>
+		</div>
+		<div class="box box04">
+			<div class="title">
+				<a href="#" onclick="sellymonPop(); return false;">
+					<strong>세금계산기</strong>
+					<p>어려운 세금 간편하게 계산하기</p>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+<div class="footer_inner">
+	<div class="footer_logo">Liiv on</div>
+	<div class="footer_cont">
+		<ul class="footer_menu">
+			<li><a href="/quics?page=C059765">고객센터</a></li>
+			<li><a href="/quics?page=C059768">이용안내</a></li>
+			<li><a href="/quics?page=C059770">이용약관</a></li>
+			<li><a href="#" onclick="fn_Responsibility(this); return false;" title="새창열림">책임한계와 법적고지</a></li>
+			<li><a href="/quics?page=C059910">사이트맵</a></li>
+			<li><a href="/quics?page=C059772"><strong>개인정보처리방침</strong></a></li>
+		</ul>
+		<div class="footer_info">
+			<form name="chttCnselTtmCnfrmForm" id="chttCnselTtmCnfrmForm" method="post" action="" target="_blank"></form>
+			문의전화
+			<span class="info_tel">010-4054-0536</span>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
 </body>

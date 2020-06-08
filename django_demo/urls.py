@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.conf.urls import url
 from main.views import index
 import main.views
 
@@ -26,9 +27,26 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('mapPage/', main.views.mapPage, name='mapPage'),
-    path('mapPage/bds', main.views.bokdae_info, name='bokdae_info'),
+    path('mapPage/apt', main.views.apt, name='apt'),
     path('mapPage/bda', main.views.bokdae_apt_list, name='bokdae_apt_list'),
     path('mapPage/bdo', main.views.bokdae_office_list, name='bokdae_office_list'),
+
+
+    url(r'^accounts/',include('accounts.urls')),
+
+
+    path('accounts/main/post/a/', main.views.BoardListView.as_view(), name="BoardList"),
+    path('post/a/', main.views.BoardListView.as_view(), name="BoardList"),
+    path('post/<int:pk>/', main.views.TopicListView.as_view(), name="TopicList"),
+    path('post/<int:pk>/new/', main.views.TopicCreateView.as_view(), name="NewTopic"),
+    path('post/<int:pk>/topics/<int:topic_pk>/',
+         main.views.TopicPostsView.as_view(), name="TopicPosts"),
+    path('post/<int:pk>/topics/<int:topic_pk>/edit/<int:post_pk>/',
+         main.views.PostUpdateView.as_view(), name="PostUpdate"),
+    path('post/<int:pk>/topics/<int:topic_pk>/reply/',
+         main.views.PostReplyView.as_view(), name="PostReply"),
+    path('post/a/main/', main.views.index, name = 'index'),
+    path('post/search/', main.views.border_search, name='search'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
