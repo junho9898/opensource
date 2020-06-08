@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Shop Homepage - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href='{% static "mainapp/vendor/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+   <link href='{% static "mainapp/css/shop-homepage.css" %}' rel="stylesheet">
+
+{% block contents %}
+<div class="container" style="padding-top:100px; ">
+    {% if error %}
+    {{error}}
+    {%endif%}
+    <h1>Login</h1>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        아이디:
+        <br>
+        <input name="username" type="text" value="">
+        <br>
+        비밀번호:
+        <br>
+        <input name="password" type="password" value="">
+        <br>
+        <br>
+        <input type="submit" class="btn btn-primary"  value="로그인">
+        
+</form>    
+    </form>
+    
+</div>
+
+{% endblock %}

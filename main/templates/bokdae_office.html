@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>복대동 오피스텔 전/월세 실거래가</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>복대동 오피스텔 전/월세 실거래가</h1>
+<br>
+    <table class="table table-striped">
+        <thead>
+                <form action="" method="get" id="search_form" class="form-inline my-2 my-lg-0">
+<input class="form-control mr-sm-2" type="text" placeholder="Search" name="search_key">
+                        <button class="btn btn-outlibe-success my-2 my-sm-0" type="submit">전세 혹은 월세를 입력하세요</button>
+                </form>
+        <thead>
+        </thead>
+        <tbody>
+                {% for post in oee %}
+                <tr>
+                        <td>{{post.size}}</td>
+                        <td>{{post.year}}</td>
+                        <td>{{post.month}}</td>
+                        <td>{{post.day}}</td>
+                        <td>{{post.dong}}</td>
+                        <td>{{post.bo_price}}</td>
+                        <td>{{post.mo_price}}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+

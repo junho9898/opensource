@@ -1,0 +1,97 @@
+{% load static %}
+
+<style>
+
+ul,ol {list-style:none;}
+
+.header_body {position:relative;}
+.header_body .inner {height:50px;margin:0 auto;padding-top:23px;}
+
+.header_body .header_logo{position:relative;display:inline-block;top:-25;left:0;z-index:30;}
+.header_body .header_logo a{display:inline-block;}
+
+
+.header_body .gnb {position:absolute;top:0;left:100;right:0;padding-top:6px;background:#fff;z-index:20;}
+.header_body .gnb:before {content:'';position:absolute;left:0;right:0;top:73px;height:1px;background:#d2d3d5;}
+.header_body .gnb:after {display:none;content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:#d2d3d5;}
+.header_body .gnb .depth1 {margin:0 auto;}
+.header_body .gnb.reagent .reagent_muarea{width:1100px;margin:0 auto;text-align:right;}
+.header_body .gnb.reagent .depth1 {position:relative;display:inline-block;width:705px;margin:0;}
+.header_body .gnb .depth1>li {float:left;padding-left:75px;}
+.header_body .gnb .depth1>li:first-child {margin-left:0;}
+
+
+.header_body .gnb .depth1>li>a {display:block;padding:0px 10px 0px 10px;color:#333;text-align:center;border-bottom:4px solid transparent;}
+.header_body .gnb .depth1>li>a:hover, .header_body .gnb .depth1>li>a:focus, .header_body .gnb .depth1>li.active>a {border-color:#3e63be;}
+.header_body .gnb .depth1>li>a .depth1_menu{display:inline-block;padding:20px;height:22px;font-size:0;color:transparent;background-position:50% 0;background-repeat:no-repeat;}
+.header_body .gnb .depth1>li>a .depth1_menu.mu01{width:45px;background-image:url({% static "img/title/apt.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu02{width:45px;background-image:url({% static "img/title/off.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu03{width:45px;background-image:url({% static "img/title/one.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu06{width:45px;background-image:url({% static "img/title/ju.png" %});}
+.header_body .gnb .depth1>li>a .depth1_menu.mu07{width:50px;background-image:url({% static "img/title/mypage.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu01, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu01, .header_body .gnb .depth1>li.active>a .depth1_menu.mu01{background-image:url({% static "img/title/apt1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu02, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu02, .header_body .gnb .depth1>li.active>a .depth1_menu.mu02{background-image:url({% static "img/title/off1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu03, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu03, .header_body .gnb .depth1>li.active>a .depth1_menu.mu03{background-image:url({% static "img/title/one1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu06, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu06, .header_body .gnb .depth1>li.active>a .depth1_menu.mu06{background-image:url({% static "img/title/ju1.png" %});}
+.header_body .gnb .depth1>li>a:hover .depth1_menu.mu07, .header_body .gnb .depth1>li>a:focus .depth1_menu.mu07, .header_body .gnb .depth1>li.active>a .depth1_menu.mu07{background-image:url({% static "img/title/mypage1.png" %});}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu01{width:20px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu01_off.png);}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu02{width:64px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu02_off.png);}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu03{width:63px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu03_off.png);}
+.header_body .gnb.reagent .depth1>li>a .depth1_menu.mu06{width:90px;background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu06_off.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu01{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu01_on.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu02{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu02_on.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu03{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu03_on.png);}
+.header_body .gnb.reagent .depth1>li>a:hover .depth1_menu.mu06{background-image:url(https://nimg1.kbstar.com/img/okbland/web/img/w_gnb_reagent_mu06_on.png);}
+
+.header_body .gnb.on:after {display:block;}
+
+
+</style>
+
+
+
+
+<body>
+
+<div class="header_body">
+	<div class="inner">
+		<div class="header_logo"><a href="/" class="logo_kbl"><img src='{% static "img/title/임시로고.png" %}' alt="KB부동산 liiv on" style="width:150px; height:65px"></a>
+		</div>
+		<!-- Start: gnb -->
+		<div class="gnb">
+			<ul class="depth1 clfix">
+				<li><a href='/mapPage/apt'><span class="depth1_menu mu01">매물/시세</span></a></li>
+				<li><a href='/quics?page=C059692'><span class="depth1_menu mu02">분양</span></a></li>
+				<li><a href='/quics?page=C059702'><span class="depth1_menu mu03">경매</span></a></li>
+				<li><a href='/quics?page=C059653'><span class="depth1_menu mu06">상권분석</span></a> </li>
+				<li><a href='/quics?page=C059753'><span class="depth1_menu mu07">MY부동산</span></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div id="map" style="width:100%;height:100%;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=322bbdc07b78bbcd2d40b6fcb93b5668"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=322bbdc07b78bbcd2d40b6fcb93b5668&libraries=services,clusterer,drawing"></script>
+
+
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(36.628, 127.4541504),
+			level: 5
+		};
+		var map = new kakao.maps.Map(container, options);
+
+		var bokdae = new kakao.maps.LatLng(36.6294455, 127.4450179);
+
+		var marker = new kakao.maps.Marker({
+			position:bokdae
+		});
+
+		marker.setMap(map);
+	</script>
+
+
+</body>
