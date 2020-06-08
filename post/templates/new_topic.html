@@ -1,0 +1,22 @@
+{% extends 'board_list.html' %}
+{% block title %}새로운 글 쓰기 | {{ block.super }}{% endblock %}
+
+{% block breadcrumb %}
+<ol class="breadcrumb my-4">
+    <li class="breadcrumb-item"><a href="{% url 'BoardList' %}">게시판</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'TopicList' board.id %}">{{ board.name }}</a></li>
+    <li class="breadcrumb-item active">새로운 글쓰기</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">게시하기</button>
+</form>
+<div class="mb-5"></div>
+
+{% endblock %}

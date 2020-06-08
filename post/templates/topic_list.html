@@ -1,0 +1,43 @@
+{% extends 'board_list.html' %}
+{% block title %}{{ object.name|title }} Topics | {{ block.super }}{% endblock title %}
+
+{% block breadcrumb %}
+<ol class="breadcrumb my-4">
+    <li class="breadcrumb-item"><a href="{% url 'BoardList' %}">게시판</a></li>
+    <li class="breadcrumb-item active">{{ board.name }}</li>
+</ol>
+{% endblock breadcrumb %}
+
+
+{% block content %}
+<div class="mb-4">
+    <a href="{% url 'NewTopic' board.pk %}" class="btn btn-primary">새로운 글쓰기</a>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>게시글</th>
+            <th>회원이름</th>
+            <th>응답 수</th>
+            <th>Views</th>
+            <th>최근 업데이트</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for topic in object_list %}
+        <tr>
+            <td><a href="{% url 'TopicPosts' pk=board.id topic_pk=topic.id %}">{{ topic.subject }}</a></td>
+            <td>{{ topic.starter.username }}</td>
+            <td>{{ topic.get_reply_count }}</td>
+            <td>{{ topic.views }}</td>
+            <td>{{ topic.last_updated }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <form class="form-inline my-2 my-md-0" method="get" action="{% url 'search' %}">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="b" value="{{b}}">
+</form>
+</table>
+{% include 'pagination.html' %}
+{% endblock content %}
