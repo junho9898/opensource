@@ -1,0 +1,14 @@
+{% include "mypagebase.html" %}
+{% block content %}
+{% load static %}
+
+<center>
+<h1>회원탈퇴</h1>
+	<form action = "/member_del" method="POST":>
+		{% csrf_token %}
+		비밀번호 : <input type="text" name="pw_del">
+		<input type="submit" value="회원탈퇴">
+	</form>
+</center>
+
+{% endblock %}
