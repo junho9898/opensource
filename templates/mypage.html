@@ -1,0 +1,61 @@
+{% include "mypagebase.html" %}
+{% block content %}
+{% load static %}
+
+<body style="padding:5px 350px 5px 350px;">
+<div class="header_body">
+    <div class= "container">
+
+        <center>
+        <div class = "row mt-5 ">
+            <div class = "col-12 text-center">
+                <h1>MY PAGE</h1>
+        </center>
+
+
+
+
+<div id="container">
+		<!-- CONTENTS -->
+		<div id="content" style="background-color: #fff;">
+    <div class="c_header">
+        <h2>내정보 수정</h2>
+        <p class="contxt"> 내정보와 별명을 수정 하실 수 있습니다.</p>
+    </div>
+    <form id="profileForm" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="helpToken" name="token_help" value="fY75b1Q6fXQtWU34" />
+        <input type="hidden" id="deleteYn" name="deleteYn" value="N" />
+        <input type="hidden" id="ieLessThan9Yn" name="ieLessThan9Yn" value="N" />
+        <fieldset>
+            <legend>내정보 수정</legend>
+            <table border="0" class="tbl_model">
+
+                <colgroup>
+                    <col style="width:22%"><col>
+                </colgroup>
+                <tbody>
+
+                 <div class = "row mt-5">
+        <div class = "col-12 ">
+            <form method = "POST" action = ".">
+            {% csrf_token %}
+    <div class="form-group">
+      <label for="nickname">닉네임 설정</label>
+      <input
+      type="text"
+      class="form-control"
+      id="nickanme"
+      placeholder="닉네임"
+      name="nickname">  <button type="submit" class="btn btn-primary">등록</button>
+      <!-- 이 name 값으로 정보가 전달된다 -->
+    </div>
+     <li class="비밀번호변경"><a href="{% url 'change_pw' %}">비밀번호변경</a></li>
+     <li><a href="{% url 'member_del' %}">회원탈퇴</a></li>
+            </form>
+
+    </div>
+
+
+
+{% endblock %}
+
